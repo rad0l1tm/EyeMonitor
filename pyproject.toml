@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eyemonitor"
+version = "0.1.0"
+description = "CPU-only webcam gaze region estimator for Linux Wayland and X11"
+requires-python = ">=3.10,<3.13"
+dependencies = ["numpy>=1.26,<2", "mediapipe==0.10.21", "PySide6>=6.7,<6.9"]
+license = {text = "MIT"}
+
+[project.scripts]
+eyemonitor = "eyemonitor.app:main"
+eyemonitor-model = "eyemonitor.download:main"
+
+[tool.setuptools.packages.find]
+include = ["eyemonitor*"]
